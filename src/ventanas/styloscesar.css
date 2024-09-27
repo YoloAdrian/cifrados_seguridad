@@ -1,0 +1,139 @@
+/* Estilos base del formulario */
+.form-container {
+    max-width: 500px;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-container p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para los modales */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    background-color: #c9302c;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color:  #d9534f;
+  }
+  
+
+.btn-descifrar {
+    background-color: #138d75  !important; 
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-descifrar:hover {
+    background-color: #16a085 !important;
+}
+
+
+ 
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 15px;
+      max-width: 100%;
+      box-shadow: none; 
+    }
+  
+    .modal-content {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 10px;
+    }
+  
+    .form-container h1 {
+      font-size: 20px;
+    }
+  
+    .form-container p {
+      font-size: 12px; 
+    }
+  
+    .modal-content {
+      padding: 15px;
+    }
+  }
+  
+  
+  

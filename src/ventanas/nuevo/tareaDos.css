@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; 
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px; 
+  margin: auto; 
+  padding: 20px;
+  background: white; 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.form {
+  display: flex; 
+  flex-direction: column; 
+}
+
+.form-group {
+  margin-bottom: 15px; 
+}
+
+label {
+  margin-bottom: 5px; 
+  font-weight: bold; 
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+}
+
+.button-container {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.btn-submit {
+  background-color: #28a745; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  width: 48%; 
+}
+
+.btn-cancel {
+  background-color: #dc3545; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  width: 48%; 
+}
+
+.btn-des {
+  background-color: #212f3d ; 
+  color: rgb(255, 255, 255); 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.btn-close {
+  background-color: #943126; 
+  color: rgb(255, 255, 255); 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.modal_reg {
+  position: fixed; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: #5d6d7e; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
+  width: 90%; 
+  max-width: 600px;
+  height: auto; 
+  justify-content: center;
+}
+
+.modal_reg h3 {
+  margin: 0; 
+  margin-bottom: 15px; 
+  color: white; 
+  text-align: center;
+}
+
+
+pre {
+  white-space: pre-wrap; 
+  margin: 10px 0;
+  color: #000000;
+}
+
+.tareaDos-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  margin-top: 200px;
+}
+
+.tareaDos-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.tareaDos-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.tareaDos-text2 {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+}
+

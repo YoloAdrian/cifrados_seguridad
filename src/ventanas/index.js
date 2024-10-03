@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './stylos.css'; // Asegúrate de que la ruta sea correcta
+import './stylos.css';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -31,8 +31,13 @@ const Index = () => {
         <p>Elige qué tipo de cifrado deseas usar</p>
         
         <div className="botones">
-          <button onClick={() => navigate('/cesar')}>Cesar</button>
-          <button onClick={() => navigate('/escitala')}>Escitala</button>
+          <button className="btn-act1"  onClick={() => navigate('/cesar')}>Cesar</button>
+          <button className="btn-act1"  onClick={() => navigate('/escitala')}>Escitala</button>
+        </div>
+
+        <h3>Actividad de la Tarea 3</h3>
+        <div className="botones">
+          <button className="btn-act2"  onClick={() => navigate('/tareaDos')}>Tarea 3 </button>
         </div>
       </header>
     </div>

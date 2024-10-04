@@ -4,7 +4,7 @@ import './tareaDos.css';
 
 
 const Registro = () => {
-  // estado para los datos del formulario
+  
   const [formData, setFormData] = useState({
     nombre: '',
     apellidoPaterno: '',
@@ -16,11 +16,11 @@ const Registro = () => {
     contraseña: ''
   });
 
-  // Estado para mostrar los modales
+
   const [showModal, setShowModal] = useState(false);
   const [showDecryptedModal, setShowDecryptedModal] = useState(false);
-  const [savedData, setSavedData] = useState(null); //Se almacenan los descifrados
-  const [encryptedData, setEncryptedData] = useState(null); // Se almacenan los datos cifrados
+  const [savedData, setSavedData] = useState(null); //se guardan los datos descifrados
+  const [encryptedData, setEncryptedData] = useState(null); //se guardan los datos cifrados
 
   
   const handleChange = (e) => {
@@ -35,29 +35,29 @@ const Registro = () => {
     const key = CryptoJS.enc.Utf8.parse('0123456789abcdef'); 
     const iv = CryptoJS.enc.Utf8.parse('abcdef9876543210'); 
     const encrypted = CryptoJS.AES.encrypt(text, key, { iv: iv }); // Cifrado
-    return encrypted.toString(); // texto cifrado
+    return encrypted.toString(); // datos cifrado
   };
 
   // Función para cifrar por LUC
   const encryptLUC = (text) => {
-    return text.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 3)).join(''); // Desplazamiento de 3
+    return text.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 3)).join(''); // Desplazamiento 
   };
 
   // Función para cifrar por SHA-1
   const encryptSHA1 = (text) => {
-    return CryptoJS.SHA1(text).toString(); // Cifrado SHA-1
+    return CryptoJS.SHA1(text).toString(); // Cifrado 
   };
 
-  // Función para descifrar por LUC
+  //para descifrar por LUC
   const decryptLUC = (text) => {
     return text.split('').map(char => String.fromCharCode(char.charCodeAt(0) - 3)).join(''); 
   };
 
-  // Envío el formulario
+ 
   const handleSubmit = (e) => {
-    e.preventDefault(); // para que la pagina recargue
+    e.preventDefault();
 
-    // Cifrar datos de entrada
+  
     const encryptedNombre = encryptGOST(formData.nombre);
     const encryptedApellidoPaterno = encryptLUC(formData.apellidoPaterno);
     const encryptedApellidoMaterno = encryptLUC(formData.apellidoMaterno);
@@ -67,8 +67,8 @@ const Registro = () => {
     const encryptedCorreo = formData.correo; 
     const encryptedContraseña = encryptSHA1(formData.contraseña);
 
-    const form = new FormData(); // Se crea un objeto para enviar los datos
-    // Se agregan los datos cifrados 
+    const form = new FormData(); //para enviar los datos
+    //los datos cifrados 
     form.append('nombre', encryptedNombre);
     form.append('apellidoPaterno', encryptedApellidoPaterno);
     form.append('apellidoMaterno', encryptedApellidoMaterno);
@@ -78,7 +78,7 @@ const Registro = () => {
     form.append('correo', encryptedCorreo);
     form.append('contraseña', encryptedContraseña);
 
-    // Enviamos los datos 
+
     fetch('./enviarDatos.php', {
       method: 'POST',
       body: form,
@@ -96,8 +96,8 @@ const Registro = () => {
           correo: encryptedCorreo,
           contraseña: encryptedContraseña,
         });
-        setShowModal(true); // Se muestra el modal con datos cifrados
-        setFormData({ // Se limpian los campos del formulario
+        setShowModal(true); 
+        setFormData({ 
           nombre: '',
           apellidoPaterno: '',
           apellidoMaterno: '',
@@ -113,7 +113,6 @@ const Registro = () => {
       });
   };
 
-  // Función para cancelar y limpiar el formulario
   const handleCancel = () => {
     setFormData({
       nombre: '',
@@ -127,7 +126,6 @@ const Registro = () => {
     });
   };
 
-  // Función para descifrar los datos
   const handleDecrypt = () => {
     const decryptedData = {
       nombre: CryptoJS.AES.decrypt(encryptedData.nombre, CryptoJS.enc.Utf8.parse('0123456789abcdef'), { iv: CryptoJS.enc.Utf8.parse('abcdef9876543210') }).toString(CryptoJS.enc.Utf8),
@@ -139,11 +137,10 @@ const Registro = () => {
       correo: encryptedData.correo,
       contraseña: encryptedData.contraseña,
     };
-    setSavedData(decryptedData); // Se guardan los datos descifrados
-    setShowDecryptedModal(true); // Se muestra el modal con datos descifrados
+    setSavedData(decryptedData); // los descifrados
+    setShowDecryptedModal(true);
   };
 
-  // Renderizamos el componente
   return (
     <div className="container">
       <h2>Registro de usuarios</h2>
@@ -258,7 +255,7 @@ const Registro = () => {
         </div>
       </form>
 
-    {/*Se muestran los datos cifrados */}
+  
     {showModal && (
     <div className="modal_reg">
         <h3>Datos Guardados</h3>
@@ -269,7 +266,7 @@ const Registro = () => {
     )}
 
 
-      {/* Se muestran los datos descifrados */}
+     
       {showDecryptedModal && (
         <div className="modal_reg">
           <h3>Datos Descifrados</h3>
